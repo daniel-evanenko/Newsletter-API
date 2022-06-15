@@ -47,7 +47,7 @@ app.post("/",function(req,res){
   const url = "https://us14.api.mailchimp.com/3.0/lists/59e6c651fa"
   const options = {
     method: "POST",
-    auth: "daniel:0f0a7a7bd22c1e0fac4997d01d88aeeb-us14"
+    auth: process.env.API_KEY
   }
 
   const request = https.request(url, options, function(response){
@@ -71,7 +71,5 @@ app.post("/",function(req,res){
 app.post("/failure", function(req,res){
   res.redirect("/");
 })
-
-// api key : 0f0a7a7bd22c1e0fac4997d01d88aeeb-us14
 
 // list id: 59e6c651fa
